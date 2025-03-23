@@ -1,0 +1,30 @@
+[project]
+name = "FastAPI project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.2",
+    "uvicorn>=0.32.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "httpx>=0.28.1",
+    "pytest>=8.3.5",
+    "ruff>=0.7.0",
+]
+
+[tool.uv.workspace]
+members = ["help"]
+
+[tool.ruff.lint]
+extend-select = ["E", "W"]
+
+[tool.pytest.ini_options]
+addopts = "-v"
+pythonpath = "."
+testpaths = [
+    "tests"
+]
